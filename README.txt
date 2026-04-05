@@ -1,0 +1,1 @@
+Harjoitustyö kurssille olio-ohjelmointi. Ajetaan Android Studiossa.
