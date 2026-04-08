@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Harkkatyo">
         <activity
+            android:name=".ListLutemons"
+            android:exported="false" />
+        <activity
+            android:name=".MoveLutemons"
+            android:exported="false" />
+        <activity
             android:name=".AddLutemons"
             android:exported="false" />
         <activity
