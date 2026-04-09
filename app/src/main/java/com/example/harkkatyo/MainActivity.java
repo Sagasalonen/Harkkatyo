@@ -25,13 +25,22 @@ public class MainActivity extends AppCompatActivity {
     }
     public void AddLutemons(View view){
         Intent intent = new Intent(this, AddLutemons.class);
+        startActivity(intent);
     }
     public void MoveLutemons(View view){
         Intent intent = new Intent(this, MoveLutemons.class);
+        startActivity(intent);
     }
     public void ListLutemons(View view){
         Intent intent = new Intent(this, ListLutemons.class);
+        startActivity(intent);
     }
-    public void MoveToFightingArena(View view){}
-    public void MoveToTrainingArena(View view){}
+    public void MoveToFightingArena(View view){
+        Intent intent = new Intent(this, FightingArena.class);
+        startActivity(intent);
+    }
+    public void MoveToTrainingArena(View view){
+        Intent intent = new Intent(this, TrainingArena.class);
+        startActivity(intent);
+    }
 }

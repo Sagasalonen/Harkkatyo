@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Harkkatyo">
         <activity
+            android:name=".TrainingArena"
+            android:exported="false" />
+        <activity
+            android:name=".FightingArena"
+            android:exported="false" />
+        <activity
             android:name=".ListLutemons"
             android:exported="false" />
         <activity
