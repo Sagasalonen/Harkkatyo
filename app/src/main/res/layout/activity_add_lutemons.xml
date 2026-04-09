@@ -11,8 +11,12 @@
         android:id="@+id/chooseColorGroup"
         android:layout_width="292dp"
         android:layout_height="248dp"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="56dp">
+        app:layout_constraintBottom_toTopOf="@+id/nameLutemonText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.593">
 
         <RadioButton
             android:id="@+id/pinkRb"
@@ -47,21 +51,36 @@
 
     <EditText
         android:id="@+id/nameLutemonText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="217dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="52dp"
         android:ems="10"
         android:hint="Nimeä lutemon"
         android:inputType="text"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="373dp" />
+        app:layout_constraintBottom_toTopOf="@+id/addLutemonBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/addLutemonBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
         android:backgroundTint="#CC88B6"
         android:text="Lisää uusi Lutemon"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="466dp" />
+        app:layout_constraintBottom_toTopOf="@+id/inputAllInfoText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/inputAllInfoText"
+        android:layout_width="304dp"
+        android:layout_height="82dp"
+        android:layout_marginBottom="112dp"
+        android:textColor="#D50F0F"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
