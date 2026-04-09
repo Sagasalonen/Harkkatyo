@@ -11,8 +11,11 @@
         android:id="@+id/chooseColorGroup"
         android:layout_width="292dp"
         android:layout_height="248dp"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="56dp">
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/pinkRb"
@@ -56,22 +59,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseColorGroup"
-        app:layout_constraintVertical_bias="0.366" />
+        app:layout_constraintTop_toBottomOf="@+id/chooseColorGroup" />
 
     <Button
         android:id="@+id/addLutemonBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
+        android:layout_marginBottom="252dp"
         android:backgroundTint="#CC88B6"
         android:text="Lisää uusi Lutemon"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseColorGroup"
-        app:layout_constraintVertical_bias="0.095" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/inputAllInfoText"
@@ -79,6 +79,23 @@
         android:layout_height="128dp"
         android:textColor="#DC2121"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="560dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addLutemonBtn" />
+
+    <Button
+        android:id="@+id/goBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#CC88B6"
+        android:text="Palaa"
+        app:layout_constraintBottom_toTopOf="@+id/chooseColorGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.harkkatyo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -29,10 +30,10 @@ public class AddLutemons extends AppCompatActivity {
         });
 
         textInput = findViewById(R.id.nameLutemonText);
-        //textOutput = findViewById(R.id.inputAllInfoText);
+        textOutput = findViewById(R.id.inputAllInfoText);
     }
 
-    private void addLutemonToList(View view) {
+    public void addLutemonToList(View view) {
 
         RadioGroup rgLutemonColor = findViewById(R.id.chooseColorGroup);
 
@@ -46,6 +47,7 @@ public class AddLutemons extends AppCompatActivity {
             int lives = 19;
             Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
             LutemonStorage.getInstance().addLutemon(lutemon);
+
         } else if (choice == R.id.whiteRb) {
             String name = textInput.getText().toString();
             String color = "valkoinen";
@@ -85,5 +87,9 @@ public class AddLutemons extends AppCompatActivity {
         } else {
             textOutput.setText("Syötä värivalinta ennen Lutemonin lisäämistä");
         }
+    }
+    private void backToMainActivity(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
