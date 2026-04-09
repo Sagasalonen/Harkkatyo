@@ -3,7 +3,7 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="110dp"
+    android:layout_height="125dp"
     android:layout_marginTop="5dp"
     android:background="#F6D5E7"
     android:orientation="horizontal">
@@ -27,6 +27,12 @@
             android:layout_height="wrap_content"
             android:text="Lutemonin nimi"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtLutemonColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Väri" />
 
         <TextView
             android:id="@+id/txtLutemonAttacks"

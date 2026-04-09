@@ -9,15 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class LutemonViewHolder extends RecyclerView.ViewHolder {
     ImageView imageView;
-    TextView lutemonName,lutemonAttacks,lutemonDefences, lutemonLives,lutemonExperiencePoints;
+    TextView lutemonName,lutemonColor,lutemonAttacks,lutemonDefences, lutemonLives,lutemonExperiencePoints;
     public LutemonViewHolder(@NonNull View itemView) {
         super(itemView);
-        lutemonName = itemView.findViewById();
-        // tähän add contact näkymästä kaikki jutut tähän tyyliin:  contactName = itemView.findViewById(R.id.ContactNameText);
-        //        contactNumber = itemView.findViewById(R.id.ContactNumberText);
-        //        contactGroup = itemView.findViewById(R.id.ContactGroupText);
-        //
-        //        deleteContact = itemView.findViewById(R.id.ContactDeleteButton);
-        //        detailsContact=itemView.findViewById(R.id.ContactDetailsButton);
+        lutemonName = itemView.findViewById(R.id.txtLutemonName);
+        lutemonColor = itemView.findViewById(R.id.txtLutemonColor);
+        lutemonAttacks = itemView.findViewById(R.id.txtLutemonAttacks);
+        lutemonDefences = itemView.findViewById(R.id.txtLutemonDefences);
+        lutemonLives = itemView.findViewById(R.id.txtLutemonLives);
+        lutemonExperiencePoints = itemView.findViewById(R.id.txtLutemonExperiencePoints);
     }
 }
