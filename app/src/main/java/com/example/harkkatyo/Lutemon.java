@@ -5,7 +5,7 @@ public class Lutemon {
     private String color;
     private int defences;
     private int attacks;
-    private int experiencePoint;
+    private int experiencePoints;
     private int lives;
 
     public Lutemon(String name, String color, int defences, int attacks, int experiencePoints, int lives) {
