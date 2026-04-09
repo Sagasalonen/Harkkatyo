@@ -7,4 +7,40 @@
     android:layout_height="match_parent"
     tools:context=".AddLutemons">
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="56dp" >
+
+        <RadioButton
+            android:id="@+id/pinkRb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="pinkki" />
+
+        <RadioButton
+            android:id="@+id/whiteRb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="valkoinen" />
+
+        <RadioButton
+            android:id="@+id/greenRb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="vihreä" />
+
+        <RadioButton
+            android:id="@+id/orangeRb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="oranssi" />
+
+        <RadioButton
+            android:id="@+id/blackRb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="musta" />
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
