@@ -1,12 +1,12 @@
 package com.example.harkkatyo;
 
 public class Lutemon {
-    private String name;
-    private String color;
-    private int defences;
-    private int attacks;
-    private int experiencePoint;
-    private int lives;
+    public String name;
+    public String color;
+    public int defences;
+    public int attacks;
+    public int experiencePoints;
+    public int lives;
 
     public Lutemon(String name, String color, int defences, int attacks, int experiencePoints, int lives) {
         this.name = name;

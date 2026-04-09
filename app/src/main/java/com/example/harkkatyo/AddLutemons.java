@@ -29,7 +29,7 @@ public class AddLutemons extends AppCompatActivity {
         });
 
         textInput = findViewById(R.id.nameLutemonText);
-        textOutput = findViewById(R.id.inputAllInfoText);
+        //textOutput = findViewById(R.id.inputAllInfoText);
     }
 
     private void addLutemonToList(View view) {
