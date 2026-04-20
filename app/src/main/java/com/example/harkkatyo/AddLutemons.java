@@ -48,7 +48,8 @@ public class AddLutemons extends AppCompatActivity {
                 int defences = 3;
                 int experiencePoints = 0;
                 int lives = 19;
-                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
+                String location = "home";
+                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives, location);
                 LutemonStorage.getInstance().addLutemon(lutemon);
                 textOutput.setText("Lutemon '" + name + "' lisätty");
             } else if (choice == R.id.whiteRb) {
@@ -57,7 +58,8 @@ public class AddLutemons extends AppCompatActivity {
                 int defences = 4;
                 int experiencePoints = 0;
                 int lives = 20;
-                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
+                String location = "home";
+                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives, location);
                 LutemonStorage.getInstance().addLutemon(lutemon);
                 textOutput.setText("Lutemon '" + name + "' lisätty");
             } else if (choice == R.id.pinkRb) {
@@ -75,7 +77,8 @@ public class AddLutemons extends AppCompatActivity {
                 int defences = 1;
                 int experiencePoints = 0;
                 int lives = 17;
-                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
+                String location = "home";
+                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives, location);
                 LutemonStorage.getInstance().addLutemon(lutemon);
                 textOutput.setText("Lutemon '" + name + "' lisätty");
             } else if (choice == R.id.blackRb) {
@@ -84,7 +87,8 @@ public class AddLutemons extends AppCompatActivity {
                 int defences = 0;
                 int experiencePoints = 0;
                 int lives = 16;
-                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
+                String location = "home";
+                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives, location);
                 LutemonStorage.getInstance().addLutemon(lutemon);
                 textOutput.setText("Lutemon '" + name + "' lisätty");
             } else {
