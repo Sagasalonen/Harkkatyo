@@ -80,7 +80,7 @@
         android:layout_height="128dp"
         android:gravity="center_horizontal"
         android:soundEffectsEnabled="true"
-        android:textColor="#213DDC"
+        android:textColor="#CC88B6"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,5 +1,7 @@
 package com.example.harkkatyo;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class LutemonStorage {
