@@ -7,13 +7,15 @@ public class Lutemon {
     public int attacks;
     public int experiencePoints;
     public int lives;
+    public String location;
 
-    public Lutemon(String name, String color, int defences, int attacks, int experiencePoints, int lives) {
+    public Lutemon(String name, String color, int defences, int attacks, int experiencePoints, int lives, String location) {
         this.name = name;
         this.color = color;
         this.defences = defences;
         this.attacks = attacks;
         this.experiencePoints = experiencePoints;
         this.lives = lives;
+        this.location= location;
     }
 }
