@@ -36,56 +36,60 @@ public class AddLutemons extends AppCompatActivity {
     public void addLutemonToList(View view) {
 
         RadioGroup rgLutemonColor = findViewById(R.id.chooseColorGroup);
+        String name = textInput.getText().toString();
 
-        int choice = rgLutemonColor.getCheckedRadioButtonId();
-        if (choice == R.id.greenRb) {
-            String name = textInput.getText().toString();
-            String color = "vihreä";
-            int attacks = 6;
-            int defences = 3;
-            int experiencePoints = 0;
-            int lives = 19;
-            Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
-            LutemonStorage.getInstance().addLutemon(lutemon);
-
-        } else if (choice == R.id.whiteRb) {
-            String name = textInput.getText().toString();
-            String color = "valkoinen";
-            int attacks = 5;
-            int defences = 4;
-            int experiencePoints = 0;
-            int lives = 20;
-            Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
-            LutemonStorage.getInstance().addLutemon(lutemon);
-        } else if (choice == R.id.pinkRb) {
-            String name = textInput.getText().toString();
-            String color = "pinkki";
-            int attacks = 7;
-            int defences = 2;
-            int experiencePoints = 0;
-            int lives = 18;
-            Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
-            LutemonStorage.getInstance().addLutemon(lutemon);
-        } else if (choice == R.id.orangeRb) {
-            String name = textInput.getText().toString();
-            String color = "oranssi";
-            int attacks = 8;
-            int defences = 1;
-            int experiencePoints = 0;
-            int lives = 17;
-            Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
-            LutemonStorage.getInstance().addLutemon(lutemon);
-        } else if (choice == R.id.blackRb) {
-            String name = textInput.getText().toString();
-            String color = "musta";
-            int attacks = 9;
-            int defences = 0;
-            int experiencePoints = 0;
-            int lives = 16;
-            Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
-            LutemonStorage.getInstance().addLutemon(lutemon);
+        if(name.isEmpty()) {
+            textOutput.setText("Nimeä Lutemon ennen sen lisäämistä");
         } else {
-            textOutput.setText("Syötä värivalinta ennen Lutemonin lisäämistä");
+            int choice = rgLutemonColor.getCheckedRadioButtonId();
+            if (choice == R.id.greenRb) {
+                String color = "vihreä";
+                int attacks = 6;
+                int defences = 3;
+                int experiencePoints = 0;
+                int lives = 19;
+                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
+                LutemonStorage.getInstance().addLutemon(lutemon);
+                textOutput.setText("Lutemon '" + name + "' lisätty");
+            } else if (choice == R.id.whiteRb) {
+                String color = "valkoinen";
+                int attacks = 5;
+                int defences = 4;
+                int experiencePoints = 0;
+                int lives = 20;
+                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
+                LutemonStorage.getInstance().addLutemon(lutemon);
+                textOutput.setText("Lutemon '" + name + "' lisätty");
+            } else if (choice == R.id.pinkRb) {
+                String color = "pinkki";
+                int attacks = 7;
+                int defences = 2;
+                int experiencePoints = 0;
+                int lives = 18;
+                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
+                LutemonStorage.getInstance().addLutemon(lutemon);
+                textOutput.setText("Lutemon '" + name + "' lisätty");
+            } else if (choice == R.id.orangeRb) {
+                String color = "oranssi";
+                int attacks = 8;
+                int defences = 1;
+                int experiencePoints = 0;
+                int lives = 17;
+                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
+                LutemonStorage.getInstance().addLutemon(lutemon);
+                textOutput.setText("Lutemon '" + name + "' lisätty");
+            } else if (choice == R.id.blackRb) {
+                String color = "musta";
+                int attacks = 9;
+                int defences = 0;
+                int experiencePoints = 0;
+                int lives = 16;
+                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
+                LutemonStorage.getInstance().addLutemon(lutemon);
+                textOutput.setText("Lutemon '" + name + "' lisätty");
+            } else {
+                textOutput.setText("Syötä värivalinta ennen Lutemonin lisäämistä");
+            }
         }
     }
     public void backToMainActivity(View view) {
