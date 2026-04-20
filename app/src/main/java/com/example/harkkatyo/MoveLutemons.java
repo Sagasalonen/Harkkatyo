@@ -31,18 +31,18 @@ public class MoveLutemons extends AppCompatActivity {
         Button DeadButton = findViewById(R.id.ShowLutemonsWhoAreDead);
 
 
-        DeadLutemonsFragment.setOnClickListener(listener);
-        LutemonsTrainingFragment.setOnClickListener(listener);
-        LutemonsAtHomeFragment.setOnClickListener(listener);
-        LutemonsFightingFragment.setOnClickListener(listener);
-
+        DeadButton.setOnClickListener(listener);
+        trainingButton.setOnClickListener(listener);
+        homeButton.setOnClickListener(listener);
+        fightingButton.setOnClickListener(listener);
+    }
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        });
+        }
 
         private View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -52,11 +52,9 @@ public class MoveLutemons extends AppCompatActivity {
             }
 
 
-
-    public void getBackToMainActivity(View view){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-
-        };
+            public void getBackToMainActivity(View view) {
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+            }
+        }
+}
