@@ -68,7 +68,8 @@ public class AddLutemons extends AppCompatActivity {
                 int defences = 2;
                 int experiencePoints = 0;
                 int lives = 18;
-                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives);
+                String location = "home";
+                Lutemon lutemon = new Lutemon(name, color, defences, attacks, experiencePoints, lives, location);
                 LutemonStorage.getInstance().addLutemon(lutemon);
                 textOutput.setText("Lutemon '" + name + "' lisätty");
             } else if (choice == R.id.orangeRb) {
