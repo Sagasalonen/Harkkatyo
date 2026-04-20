@@ -41,7 +41,7 @@ public class MoveLutemons extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        }
+        });
     }
 
         private View.OnClickListener listener = new View.OnClickListener() {
@@ -50,11 +50,11 @@ public class MoveLutemons extends AppCompatActivity {
                 Fragment fragment;
 
             }
-        }
+        };
 
 
-        public void getBackToMainActivity(View view) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
-}
+            public void getBackToMainActivity(View view) {
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+            }
+        };
