@@ -35,14 +35,14 @@ public class MoveLutemons extends AppCompatActivity {
         trainingButton.setOnClickListener(listener);
         homeButton.setOnClickListener(listener);
         fightingButton.setOnClickListener(listener);
-    }
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        }
+        });
+    }
 
         private View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -51,10 +51,9 @@ public class MoveLutemons extends AppCompatActivity {
 
             }
 
-
             public void getBackToMainActivity(View view) {
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
             }
-        }
+        };
 }
