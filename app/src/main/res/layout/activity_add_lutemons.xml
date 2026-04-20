@@ -91,6 +91,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="#CC88B6"
+        android:onClick="backToMainActivity"
         android:text="Palaa"
         app:layout_constraintBottom_toTopOf="@+id/chooseColorGroup"
         app:layout_constraintEnd_toEndOf="parent"

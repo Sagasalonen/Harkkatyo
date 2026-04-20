@@ -88,7 +88,7 @@ public class AddLutemons extends AppCompatActivity {
             textOutput.setText("Syötä värivalinta ennen Lutemonin lisäämistä");
         }
     }
-    private void backToMainActivity(View view) {
+    public void backToMainActivity(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
