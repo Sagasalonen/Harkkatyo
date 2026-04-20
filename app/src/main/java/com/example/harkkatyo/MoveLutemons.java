@@ -49,6 +49,24 @@ public class MoveLutemons extends AppCompatActivity {
             public void onClick(View view) {
                 Fragment fragment;
 
+                if (view.getId()== R.id.ShowLutemonsAtHome){
+                    fragment = new LutemonsAtHomeFragment();
+                }
+                else if (view.getId()== R.id.ShowLutemonsAtFightingArena){
+                    fragment = new LutemonsFightingFragment();
+                }
+                else if (view.getId()== R.id.ShowLutemonsAtTrainingArena){
+                    fragment = new LutemonsTrainingFragment();
+                }
+                else if (view.getId()== R.id.ShowLutemonsWhoAreDead){
+                    fragment = new DeadLutemonsFragment();
+                }else {fragment = new LutemonsAtHomeFragment();}
+
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frame, fragment)
+                        .commit();
+
+
             }
         };
 
