@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> {
 
     private Context context;
-    private ArrayList<Lutemon> lutemons = new ArrayList<>();
+    private ArrayList<Lutemon> lutemons;
 
     public LutemonListAdapter(Context context, ArrayList<Lutemon> lutemons) {
         this.context = context;
@@ -28,13 +28,13 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull LutemonViewHolder holder, int position) {
-        Lutemon lutemon = LutemonStorage.getInstance().getLutemons().get(position);
+        Lutemon lutemon = lutemons.get(position);
         holder.lutemonName.setText(lutemon.name);
         holder.lutemonColor.setText(lutemon.color);
-        holder.lutemonDefences.setText(lutemon.defences);
-        holder.lutemonAttacks.setText(lutemon.attacks);
-        holder.lutemonLives.setText(lutemon.lives);
-        holder.lutemonExperiencePoints.setText(lutemon.experiencePoints);
+        holder.lutemonDefences.setText(String.valueOf(lutemon.defences));
+        holder.lutemonAttacks.setText(String.valueOf(lutemon.attacks));
+        holder.lutemonLives.setText(String.valueOf(lutemon.lives));
+        holder.lutemonExperiencePoints.setText(String.valueOf(lutemon.experiencePoints));
     }
 
     @Override
