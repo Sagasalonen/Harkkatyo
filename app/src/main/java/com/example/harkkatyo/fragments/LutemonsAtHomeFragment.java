@@ -8,7 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.harkkatyo.Lutemon;
 import com.example.harkkatyo.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,5 +65,15 @@ public class LutemonsAtHomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_lutemons_at_home, container, false);
+    }
+
+    public void ListLutemonsAtHome(ArrayList<Lutemon> lutemons) {
+        for (int i = 0; i < lutemons.size(); i++) {
+            Lutemon lutemon = lutemons.get(i);
+            if (lutemon.location == "home") {
+                ArrayList<Lutemon> LutemonsAtHome = new ArrayList<>();
+                LutemonsAtHome.add(lutemon);
+            }
+        }
     }
 }
