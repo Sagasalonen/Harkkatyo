@@ -3,16 +3,23 @@ package com.example.harkkatyo.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.harkkatyo.Lutemon;
+import com.example.harkkatyo.LutemonStorage;
+import com.example.harkkatyo.MoveAdapter;
 import com.example.harkkatyo.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link LutemonsTrainingFragment#newInstance} factory method to
+ * Use the {@link LutemonsAtHomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class LutemonsTrainingFragment extends Fragment {
@@ -36,7 +43,7 @@ public class LutemonsTrainingFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment LutemonsTrainingFragment.
+     * @return A new instance of fragment LutemonsAtHomeFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static LutemonsTrainingFragment newInstance(String param1, String param2) {
@@ -60,7 +67,26 @@ public class LutemonsTrainingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_lutemons_training, container, false);
+        RecyclerView recyclerView = view.findViewById(R.id.LutemonsTrainingRV);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lutemons_training, container, false);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        ArrayList<Lutemon>trainingLutemons = ListLutemonsTraining(LutemonStorage.getInstance().getLutemons());
+
+        MoveAdapter adapter = new MoveAdapter(getContext(),trainingLutemons);
+        recyclerView.setAdapter(adapter);
+        return view;
+    }
+
+    public ArrayList<Lutemon> ListLutemonsTraining(ArrayList<Lutemon> lutemons) {
+        ArrayList<Lutemon> lutemonsTraining = new ArrayList<>();
+        for (int i = 0; i < lutemons.size(); i++) {
+            Lutemon lutemon = lutemons.get(i);
+            if (lutemon.location.equals("treenikenttä")){
+                lutemonsTraining.add(lutemon);
+            }
+        }
+        return lutemonsTraining;
     }
 }

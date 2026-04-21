@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".fragments.LutemonsTrainingFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/LutemonsTrainingRV"
+        android:layout_width="match_parent"
+        android:layout_height="226dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <RadioGroup
+        android:layout_width="332dp"
+        android:layout_height="164dp">
+
+        <RadioButton
+            android:id="@+id/ToHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kotiin" />
+
+        <RadioButton
+            android:id="@+id/ToTrain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Treenaamaan" />
+
+        <RadioButton
+            android:id="@+id/ToFight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Taistelemaan" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/MoveLutemon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CE89B7"
+        android:text="Siirrä lutemon" />
+
+</LinearLayout>

@@ -3,6 +3,7 @@ package com.example.harkkatyo.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.harkkatyo.Lutemon;
+import com.example.harkkatyo.LutemonStorage;
+import com.example.harkkatyo.MoveAdapter;
 import com.example.harkkatyo.R;
 
 import java.util.ArrayList;
@@ -65,8 +68,14 @@ public class LutemonsAtHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lutemons_at_home, container, false);
-        RecyclerView recyclerView = view.findViewById(R.id.LutemonsAtHomeRV);
+        RecyclerView recyclerView = view.findViewById(R.id.LutemonsFightingRV);
         // Inflate the layout for this fragment
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        ArrayList<Lutemon>homeLutemons = ListLutemonsAtHome(LutemonStorage.getInstance().getLutemons());
+
+        MoveAdapter adapter = new MoveAdapter(getContext(),homeLutemons);
+        recyclerView.setAdapter(adapter);
         return view;
     }
 
@@ -74,7 +83,7 @@ public class LutemonsAtHomeFragment extends Fragment {
         ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
         for (int i = 0; i < lutemons.size(); i++) {
             Lutemon lutemon = lutemons.get(i);
-            if (lutemon.location == "home") {
+            if (lutemon.location.equals("home")){
                 lutemonsAtHome.add(lutemon);
             }
         }
