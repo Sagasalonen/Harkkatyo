@@ -69,13 +69,14 @@ public class LutemonsAtHomeFragment extends Fragment {
         recyclerView = findViewById(R.id.LutemonsAtHomeRV);
     }
 
-    public void ListLutemonsAtHome(ArrayList<Lutemon> lutemons) {
+    public ArrayList<Lutemon> ListLutemonsAtHome(ArrayList<Lutemon> lutemons) {
+        ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
         for (int i = 0; i < lutemons.size(); i++) {
             Lutemon lutemon = lutemons.get(i);
             if (lutemon.location == "home") {
-                ArrayList<Lutemon> LutemonsAtHome = new ArrayList<>();
-                LutemonsAtHome.add(lutemon);
+                lutemonsAtHome.add(lutemon);
             }
         }
+        return lutemonsAtHome;
     }
 }
