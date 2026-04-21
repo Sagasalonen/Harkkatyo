@@ -14,6 +14,7 @@
         android:id="@+id/lutemonName"
         android:layout_width="277dp"
         android:layout_height="48dp"
+        android:gravity="center_vertical"
         android:text="Pinkki"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
