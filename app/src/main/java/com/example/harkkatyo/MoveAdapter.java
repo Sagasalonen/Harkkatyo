@@ -10,13 +10,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder> {
+public class MoveAdapter extends RecyclerView.Adapter<MoveViewHolder> {
     private Context context;
-    private ArrayList<Lutemon> lutemons = new ArrayList<>();
+    private ArrayList<Lutemon> lutemons;
+    private ArrayList<Lutemon> selectedLutemons = new ArrayList<>();
 
     public MoveAdapter(Context context, ArrayList<Lutemon> lutemons) {
         this.context = context;
         this.lutemons = lutemons;
+    }
+    public ArrayList<Lutemon> getSelectedLutemons(){
+        return selectedLutemons;
     }
 
     @NonNull
@@ -25,17 +29,22 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
         return new MoveViewHolder(LayoutInflater.from(context).inflate(R.layout.home_view, parent, false));
     }
     @Override
-    public void onBindViewHolder(@NonNull MoveViewHolder holder, int position) {}
+    public void onBindViewHolder(@NonNull MoveViewHolder holder, int position) {
+        Lutemon lutemon = lutemons.get(position);
+        holder.lutemonName.setText(lutemon.name+" ("+lutemon.color+")");
+        holder.checkBox.setOnCheckedChangeListener(null);
+        holder.checkBox.setChecked(selectedLutemons.contains(lutemon));
+
+        holder.checkBox.setOnCheckedChangeListener((buttonView,isChecked)->{
+            if (isChecked){
+                selectedLutemons.add(lutemon);
+            }else{selectedLutemons.remove(lutemon);}
+        });
+    }
 
     @Override
     public int getItemCount() {
         return lutemons.size();
     }
-    static class MoveViewHolder extends RecyclerView.ViewHolder {
-        public MoveViewHolder(@NonNull View itemView){
-            super(itemView);
-        }
-
-    }
-
 }
+

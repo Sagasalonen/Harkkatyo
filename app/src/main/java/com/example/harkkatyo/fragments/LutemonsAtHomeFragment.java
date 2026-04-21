@@ -65,6 +65,8 @@ public class LutemonsAtHomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_lutemons_at_home, container, false);
+
+        recyclerView = findViewById(R.id.LutemonsAtHomeRV);
     }
 
     public void ListLutemonsAtHome(ArrayList<Lutemon> lutemons) {
