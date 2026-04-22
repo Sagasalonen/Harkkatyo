@@ -37,6 +37,8 @@ public class LutemonsAtHomeFragment extends Fragment {
 
     private MoveAdapter adapter;
 
+    private RadioGroup rgLutemonMove;
+
     public LutemonsAtHomeFragment() {
         // Required empty public constructor
     }
@@ -96,7 +98,7 @@ public class LutemonsAtHomeFragment extends Fragment {
 
     public void moveLutemonFromHome(View view) {
 
-        RadioGroup rgLutemonMove = view.findViewById(R.id.moveFromHome);
+        rgLutemonMove = view.findViewById(R.id.moveFromHome);
         ArrayList<Lutemon> selectedLutemons = adapter.getSelectedLutemons();
 
         int choice = rgLutemonMove.getCheckedRadioButtonId();
