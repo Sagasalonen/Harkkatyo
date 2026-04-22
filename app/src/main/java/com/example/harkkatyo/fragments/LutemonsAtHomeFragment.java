@@ -101,6 +101,12 @@ public class LutemonsAtHomeFragment extends Fragment {
                 }
             }
             adapter.notifyDataSetChanged();
+
+            Fragment fragment = new LutemonsAtHomeFragment();
+            getParentFragmentManager().beginTransaction()
+                .replace(R.id.frame, fragment)
+                .commit();
+
         }});
         return view;
     }

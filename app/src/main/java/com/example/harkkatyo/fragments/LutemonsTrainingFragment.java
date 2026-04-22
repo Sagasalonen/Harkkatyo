@@ -98,6 +98,12 @@ public class LutemonsTrainingFragment extends Fragment {
                     }
                 }
                 adapter.notifyDataSetChanged();
+
+                Fragment fragment = new LutemonsTrainingFragment();
+                getParentFragmentManager().beginTransaction()
+                        .replace(R.id.frame, fragment)
+                        .commit();
+
             }});
                 return view;
     }

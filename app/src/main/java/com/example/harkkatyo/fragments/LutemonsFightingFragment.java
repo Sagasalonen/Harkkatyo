@@ -101,6 +101,12 @@ public class LutemonsFightingFragment extends Fragment {
                     }
                 }
                 adapter.notifyDataSetChanged();
+
+                Fragment fragment = new LutemonsFightingFragment();
+                getParentFragmentManager().beginTransaction()
+                        .replace(R.id.frame, fragment)
+                        .commit();
+
             }
         });
         return view;
