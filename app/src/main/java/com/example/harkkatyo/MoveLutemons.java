@@ -65,8 +65,6 @@ public class MoveLutemons extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frame, fragment)
                         .commit();
-
-
             }
         };
 
