@@ -13,6 +13,8 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class FightingArena extends AppCompatActivity {
 
     private MoveAdapter adapter;
@@ -41,7 +43,7 @@ public class FightingArena extends AppCompatActivity {
     public void LutemonFight(Lutemon A, Lutemon B){
         while(true){
             textView.setText("1: "+A.color+"("+A.name+") att: "+A.attacks+"; def: "+A.defences+"; exp: "+A.experiencePoints+"; health: "+A.health);
-            textView.append("1: "+A.color+"("+A.name+") att: "+A.attacks+"; def: "+A.defences+"; exp: "+A.experiencePoints+"; health: "+A.health);
+            textView.append("1: "+B.color+"("+B.name+") att: "+B.attacks+"; def: "+B.defences+"; exp: "+B.experiencePoints+"; health: "+B.health);
             A.attack(B);
             textView.append(A.name+" hyökkää lutemoniin "+B.name+".");
             if (B.health>0){
@@ -61,6 +63,15 @@ public class FightingArena extends AppCompatActivity {
         }
         textView.append("Taistelu on ohi.");
 
+    }
+    public void fight(View view){
+        ArrayList<Lutemon> selectedLutemons = adapter.getSelectedLutemons();
+        if (selectedLutemons.size()!=2){textView.setText("Valitse tasan kaksi lutemonia!");
+        }else{
+            Lutemon A = selectedLutemons.get(0);
+            Lutemon B = selectedLutemons.get(1);
+            LutemonFight(A,B);
+        }
     }
     public void getBackToMainActivity(View view){
         Intent intent = new Intent(this, MainActivity.class);
