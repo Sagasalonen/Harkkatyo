@@ -37,8 +37,6 @@ public class LutemonsAtHomeFragment extends Fragment {
 
     private MoveAdapter adapter;
 
-    private RadioGroup rgLutemonMove;
-
     public LutemonsAtHomeFragment() {
         // Required empty public constructor
     }
@@ -80,8 +78,10 @@ public class LutemonsAtHomeFragment extends Fragment {
 
         ArrayList<Lutemon> homeLutemons = ListLutemonsAtHome(LutemonStorage.getInstance().getLutemons());
 
-        MoveAdapter adapter = new MoveAdapter(getContext(), homeLutemons);
+        adapter = new MoveAdapter(getContext(), homeLutemons);
         recyclerView.setAdapter(adapter);
+
+        
         return view;
     }
 
@@ -98,7 +98,7 @@ public class LutemonsAtHomeFragment extends Fragment {
 
     public void moveLutemonFromHome(View view) {
 
-        rgLutemonMove = view.findViewById(R.id.moveFromHome);
+        RadioGroup rgLutemonMove = getView().findViewById(R.id.moveFromHome);
         ArrayList<Lutemon> selectedLutemons = adapter.getSelectedLutemons();
 
         int choice = rgLutemonMove.getCheckedRadioButtonId();
@@ -111,5 +111,6 @@ public class LutemonsAtHomeFragment extends Fragment {
                 lutemon.location = "taistelukentta";
             }
         }
+        adapter.notifyDataSetChanged();
     }
 }
