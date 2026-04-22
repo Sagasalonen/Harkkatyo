@@ -43,8 +43,8 @@ public class FightingArena extends AppCompatActivity {
     public void LutemonFight(Lutemon A, Lutemon B){
         textView.setText("");
         while(true){
-            textView.append("1: "+A.color+"("+A.name+") att: "+A.attacks+"; def: "+A.defences+"; exp: "+A.experiencePoints+"; health: "+A.health+"\n");
-            textView.append("2: "+B.color+"("+B.name+") att: "+B.attacks+"; def: "+B.defences+"; exp: "+B.experiencePoints+"; health: "+B.health+"\n");
+            textView.append("1: "+A.color+"("+A.name+") att: "+A.attacks+"; def: "+A.defences+"; exp: "+A.experiencePoints+"; health: "+A.health+"/"+A.ogHealth+"\n");
+            textView.append("2: "+B.color+"("+B.name+") att: "+B.attacks+"; def: "+B.defences+"; exp: "+B.experiencePoints+"; health: "+B.health+"/"+B.ogHealth+"\n");
 
             A.attack(B);
             textView.append(A.name+" hyökkää lutemoniin "+B.name+".\n");
@@ -56,8 +56,8 @@ public class FightingArena extends AppCompatActivity {
                 A.restoreHealth();
                 A.experiencePoints++;
                 break;}
-            textView.append("2: "+B.color+"("+B.name+") att: "+B.attacks+"; def: "+B.defences+"; exp: "+B.experiencePoints+"; health: "+B.health+"\n");
-            textView.append("1: "+A.color+"("+A.name+") att: "+A.attacks+"; def: "+A.defences+"; exp: "+A.experiencePoints+"; health: "+A.health+"\n");
+            textView.append("2: "+B.color+"("+B.name+") att: "+B.attacks+"; def: "+B.defences+"; exp: "+B.experiencePoints+"; health: "+B.health+"/"+B.ogHealth+"\n");
+            textView.append("1: "+A.color+"("+A.name+") att: "+A.attacks+"; def: "+A.defences+"; exp: "+A.experiencePoints+"; health: "+A.health+"/"+A.ogHealth+"\n");
             B.attack(A);
             textView.append(B.name+" hyökkää lutemoniin "+A.name+".\n");
             if (A.health>0){
