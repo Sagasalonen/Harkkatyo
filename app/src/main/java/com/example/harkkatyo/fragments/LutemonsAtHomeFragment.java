@@ -35,6 +35,8 @@ public class LutemonsAtHomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private RadioGroup rgLutemonMove;
+
     private MoveAdapter adapter;
 
     public LutemonsAtHomeFragment() {
@@ -98,7 +100,7 @@ public class LutemonsAtHomeFragment extends Fragment {
 
     public void moveLutemonFromHome(View view) {
 
-        RadioGroup rgLutemonMove = getView().findViewById(R.id.moveFromHome);
+        rgLutemonMove = view.findViewById(R.id.moveFromHome);
         ArrayList<Lutemon> selectedLutemons = adapter.getSelectedLutemons();
 
         int choice = rgLutemonMove.getCheckedRadioButtonId();
