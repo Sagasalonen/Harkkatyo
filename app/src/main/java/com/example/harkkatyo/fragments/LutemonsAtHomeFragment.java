@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RadioGroup;
 
 import com.example.harkkatyo.Lutemon;
@@ -81,7 +82,29 @@ public class LutemonsAtHomeFragment extends Fragment {
         adapter = new MoveAdapter(getContext(), homeLutemons);
         recyclerView.setAdapter(adapter);
 
-        
+        Button button = view.findViewById(R.id.MoveLutemon);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View view) {
+
+            RadioGroup rgLutemonMove = getView().findViewById(R.id.moveFromHome);
+            ArrayList<Lutemon> selectedLutemons = adapter.getSelectedLutemons();
+
+            int choice = rgLutemonMove.getCheckedRadioButtonId();
+
+            for (int i = 0; i < selectedLutemons.size(); i++) {
+                Lutemon lutemon = selectedLutemons.get(i);
+                if (choice == R.id.ToTrain) {
+                    lutemon.location = "treenikentta";
+                } else if (choice == R.id.ToFight) {
+                    lutemon.location = "taistelukentta";
+                }
+            }
+            adapter.notifyDataSetChanged();
+        }});
+
+
         return view;
     }
 
@@ -96,9 +119,9 @@ public class LutemonsAtHomeFragment extends Fragment {
         return lutemonsAtHome;
     }
 
-    public void moveLutemonFromHome(View view) {
+    /*public void moveLutemonFromHome(View view) {
 
-        RadioGroup rgLutemonMove = getView().findViewById(R.id.moveFromHome);
+        RadioGroup rgLutemonMove = view.findViewById(R.id.moveFromHome);
         ArrayList<Lutemon> selectedLutemons = adapter.getSelectedLutemons();
 
         int choice = rgLutemonMove.getCheckedRadioButtonId();
@@ -112,5 +135,5 @@ public class LutemonsAtHomeFragment extends Fragment {
             }
         }
         adapter.notifyDataSetChanged();
-    }
+    }*/
 }
