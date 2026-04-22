@@ -22,7 +22,7 @@ public class FightingArena extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        RecyclerView recyclerView = findViewById(R.id.FightingLutemonsRv);
+        RecyclerView recyclerView = findViewById(R.id.LutemonsFightingRV);
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -36,7 +36,7 @@ public class FightingArena extends AppCompatActivity {
             return insets;
         });
     }
-    public void fight(Lutemon){}
+    public void fight(Lutemon lutemon1){}
     public void getBackToMainActivity(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
