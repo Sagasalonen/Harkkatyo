@@ -18,6 +18,7 @@ import com.example.harkkatyo.fragments.LutemonsFightingFragment;
 import com.example.harkkatyo.fragments.LutemonsTrainingFragment;
 
 public class MoveLutemons extends AppCompatActivity {
+    private Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,10 @@ public class MoveLutemons extends AppCompatActivity {
         homeButton.setOnClickListener(listener);
         fightingButton.setOnClickListener(listener);
 
+        fragment = new LutemonsAtHomeFragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.frame, fragment)
+                .commit();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -47,7 +52,6 @@ public class MoveLutemons extends AppCompatActivity {
         private View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment fragment;
 
                 if (view.getId()== R.id.ShowLutemonsAtHome){
                     fragment = new LutemonsAtHomeFragment();
@@ -60,7 +64,7 @@ public class MoveLutemons extends AppCompatActivity {
                 }
                 else if (view.getId()== R.id.ShowLutemonsWhoAreDead){
                     fragment = new DeadLutemonsFragment();
-                }else {fragment = new LutemonsAtHomeFragment();}
+                } else {fragment = new LutemonsAtHomeFragment();}
 
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frame, fragment)
