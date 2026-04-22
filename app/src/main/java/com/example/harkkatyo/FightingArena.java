@@ -41,9 +41,11 @@ public class FightingArena extends AppCompatActivity {
     }
 
     public void LutemonFight(Lutemon A, Lutemon B){
+        textView.setText("");
         while(true){
             textView.append("1: "+A.color+"("+A.name+") att: "+A.attacks+"; def: "+A.defences+"; exp: "+A.experiencePoints+"; health: "+A.health+"\n");
             textView.append("2: "+B.color+"("+B.name+") att: "+B.attacks+"; def: "+B.defences+"; exp: "+B.experiencePoints+"; health: "+B.health+"\n");
+
             A.attack(B);
             textView.append(A.name+" hyökkää lutemoniin "+B.name+".\n");
             if (B.health>0){
@@ -54,14 +56,14 @@ public class FightingArena extends AppCompatActivity {
                 A.restoreHealth();
                 A.experiencePoints++;
                 break;}
-
             textView.append("2: "+B.color+"("+B.name+") att: "+B.attacks+"; def: "+B.defences+"; exp: "+B.experiencePoints+"; health: "+B.health+"\n");
             textView.append("1: "+A.color+"("+A.name+") att: "+A.attacks+"; def: "+A.defences+"; exp: "+A.experiencePoints+"; health: "+A.health+"\n");
             B.attack(A);
             textView.append(B.name+" hyökkää lutemoniin "+A.name+".\n");
             if (A.health>0){
                 textView.append(A.name+" selvisi hyökkäyksestä hengissä.\n");
-            }else{textView.append(A.name+" kuoli hyökkäyksessä\n");
+                }
+            else{textView.append(A.name+" kuoli hyökkäyksessä\n");
                 LutemonStorage.getInstance().addDeadLutemon(A);
                 LutemonStorage.getInstance().deleteLutemon(A);
                 B.restoreHealth();
@@ -69,7 +71,8 @@ public class FightingArena extends AppCompatActivity {
                 break;}
 
         }
-        textView.append("Taistelu on ohi.");
+        textView.append("Taistelu on ohi.\n");
+
 
     }
     public void fight(View view){
