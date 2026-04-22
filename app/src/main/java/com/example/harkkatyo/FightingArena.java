@@ -18,13 +18,14 @@ import java.util.ArrayList;
 public class FightingArena extends AppCompatActivity {
 
     private MoveAdapter adapter;
+    private RecyclerView recyclerView;
     private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_fighting_arena);
-        RecyclerView recyclerView = findViewById(R.id.FightingLutemonsRv);
+        recyclerView = findViewById(R.id.FightingLutemonsRv);
 
         adapter = new MoveAdapter(this, LutemonStorage.getInstance().getLutemons());
 
@@ -72,6 +73,11 @@ public class FightingArena extends AppCompatActivity {
 
         }
         textView.append("Taistelu on ohi.");
+
+        recyclerView = findViewById(R.id.FightingLutemonsRv);
+        adapter = new MoveAdapter(this, LutemonStorage.getInstance().getLutemons());
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
 
 
     }
