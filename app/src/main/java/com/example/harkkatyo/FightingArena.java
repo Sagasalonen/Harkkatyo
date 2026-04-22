@@ -53,6 +53,7 @@ public class FightingArena extends AppCompatActivity {
             }else{textView.append(B.name+" kuoli hyökkäyksessä\n");
                 LutemonStorage.getInstance().addDeadLutemon(B);
                 LutemonStorage.getInstance().deleteLutemon(B);
+                A.restoreHealth();
                 break;}
 
             B.attack(A);
@@ -64,6 +65,7 @@ public class FightingArena extends AppCompatActivity {
             }else{textView.append(A.name+" kuoli hyökkäyksessä\n");
                 LutemonStorage.getInstance().addDeadLutemon(A);
                 LutemonStorage.getInstance().deleteLutemon(A);
+                B.restoreHealth();
                 break;}
 
         }
