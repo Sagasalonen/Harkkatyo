@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RadioGroup;
 
 import com.example.harkkatyo.Lutemon;
 import com.example.harkkatyo.LutemonStorage;
@@ -76,7 +78,28 @@ public class LutemonsTrainingFragment extends Fragment {
 
         MoveAdapter adapter = new MoveAdapter(getContext(),trainingLutemons);
         recyclerView.setAdapter(adapter);
-        return view;
+        Button button = view.findViewById(R.id.MoveLutemon);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View view) {
+
+                RadioGroup rgLutemonMove = getView().findViewById(R.id.moveFromTraining);
+                ArrayList<Lutemon> selectedLutemons = adapter.getSelectedLutemons();
+
+                int choice = rgLutemonMove.getCheckedRadioButtonId();
+
+                for (int i = 0; i < selectedLutemons.size(); i++) {
+                    Lutemon lutemon = selectedLutemons.get(i);
+                    if (choice == R.id.ToHome) {
+                        lutemon.location = "home";
+                    } else if (choice == R.id.ToFight) {
+                        lutemon.location = "taistelukentta";
+                    }
+                }
+                adapter.notifyDataSetChanged();
+            }});
+                return view;
     }
 
     public ArrayList<Lutemon> ListLutemonsTraining(ArrayList<Lutemon> lutemons) {
