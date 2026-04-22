@@ -23,13 +23,6 @@ public class FightingArena extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        RecyclerView recyclerView = findViewById(R.id.FightingLutemonsRv);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter);
-
-        textView=findViewById(R.id.resultsTxt);
-
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_fighting_arena);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -37,6 +30,12 @@ public class FightingArena extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        RecyclerView recyclerView = findViewById(R.id.FightingLutemonsRv);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
+        textView=findViewById(R.id.resultsTxt);
 
     }
 
