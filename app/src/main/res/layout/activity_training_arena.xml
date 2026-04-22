@@ -34,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#CE89B7"
+        android:onClick="TrainLutemons"
         android:text="Treenaamaan!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,9 +45,10 @@
         android:id="@+id/trainTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="treenin tulokset"
+        android:layout_marginBottom="176dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Train" />
 
@@ -61,4 +63,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/getBackToMainActivityButton"
         app:layout_constraintVertical_bias="0.031" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
