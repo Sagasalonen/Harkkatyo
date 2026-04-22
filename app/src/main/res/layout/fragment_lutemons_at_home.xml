@@ -16,14 +16,9 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <RadioGroup
+        android:id="@+id/moveFromHome"
         android:layout_width="332dp"
         android:layout_height="164dp">
-
-        <RadioButton
-            android:id="@+id/ToHome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Kotiin" />
 
         <RadioButton
             android:id="@+id/ToTrain"

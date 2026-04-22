@@ -83,7 +83,7 @@ public class LutemonsFightingFragment extends Fragment {
         ArrayList<Lutemon> lutemonsFighting = new ArrayList<>();
         for (int i = 0; i < lutemons.size(); i++) {
             Lutemon lutemon = lutemons.get(i);
-            if (lutemon.location.equals("taistelukenttä")){
+            if (lutemon.location.equals("taistelukentta")){
                 lutemonsFighting.add(lutemon);
             }
         }
