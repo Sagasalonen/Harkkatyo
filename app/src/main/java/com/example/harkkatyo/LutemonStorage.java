@@ -11,6 +11,7 @@ public class LutemonStorage {
         public ArrayList<Lutemon> deadLutemons;
         private LutemonStorage(){
             lutemons = new ArrayList<>();
+            deadLutemons = new ArrayList<>();
         }
         public static LutemonStorage getInstance() {
             if(instance == null) {

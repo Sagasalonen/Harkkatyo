@@ -43,14 +43,14 @@ public class FightingArena extends AppCompatActivity {
     public void LutemonFight(Lutemon A, Lutemon B){
         while(true){
             textView.setText("1: "+A.color+"("+A.name+") att: "+A.attacks+"; def: "+A.defences+"; exp: "+A.experiencePoints+"; health: "+A.health+"\n");
-            textView.append("1: "+B.color+"("+B.name+") att: "+B.attacks+"; def: "+B.defences+"; exp: "+B.experiencePoints+"; health: "+B.health+"\n");
+            textView.append("2: "+B.color+"("+B.name+") att: "+B.attacks+"; def: "+B.defences+"; exp: "+B.experiencePoints+"; health: "+B.health+"\n");
             A.attack(B);
             textView.append(A.name+" hyökkää lutemoniin "+B.name+".\n");
             if (B.health>0){
                 textView.append(B.name+" selvisi hyökkäyksestä hengissä.\n");
             }else{textView.append(B.name+" kuoli hyökkäyksessä\n");
-                LutemonStorage.getInstance().addDeadLutemon(A);
-                LutemonStorage.getInstance().deleteLutemon(A);
+                LutemonStorage.getInstance().addDeadLutemon(B);
+                LutemonStorage.getInstance().deleteLutemon(B);
                 break;}
 
             B.attack(A);
