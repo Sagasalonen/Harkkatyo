@@ -72,7 +72,7 @@ public class DeadLutemonsFragment extends Fragment {
         // Inflate the layout for this fragment
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        ArrayList<Lutemon>deadLutemons = ListLutemonsWhoAreDead(LutemonStorage.getInstance().getLutemons());
+        ArrayList<Lutemon>deadLutemons = (LutemonStorage.getInstance().getLutemons());
 
         LutemonListAdapter adapter = new LutemonListAdapter(getContext(),deadLutemons);
         recyclerView.setAdapter(adapter);

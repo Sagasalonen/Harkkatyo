@@ -49,6 +49,7 @@ public class FightingArena extends AppCompatActivity {
             if (B.health>0){
                 textView.append(B.name+" selvisi hyökkäyksestä hengissä.\n");
             }else{textView.append(B.name+" kuoli hyökkäyksessä\n");
+
                 B.location="dead";
                 break;}
 
