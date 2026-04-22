@@ -9,6 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class FightingArena extends AppCompatActivity {
 
@@ -17,6 +21,13 @@ public class FightingArena extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        RecyclerView recyclerView = findViewById(R.id.FightingLutemonsRv);
+
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_fighting_arena);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -25,6 +36,7 @@ public class FightingArena extends AppCompatActivity {
             return insets;
         });
     }
+    public void fight(Lutemon){}
     public void getBackToMainActivity(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
