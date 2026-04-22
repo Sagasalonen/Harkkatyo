@@ -67,8 +67,8 @@ public class DeadLutemonsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_lutemons_at_home, container, false);
-        RecyclerView recyclerView = view.findViewById(R.id.LutemonsFightingRV);
+        View view = inflater.inflate(R.layout.fragment_dead_lutemons, container, false);
+        RecyclerView recyclerView = view.findViewById(R.id.DeadLutemonsRV);
         // Inflate the layout for this fragment
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
