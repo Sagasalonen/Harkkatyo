@@ -13,8 +13,6 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-
 public class FightingArena extends AppCompatActivity {
 
     private MoveAdapter adapter;
@@ -22,16 +20,16 @@ public class FightingArena extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_fighting_arena);
         RecyclerView recyclerView = findViewById(R.id.FightingLutemonsRv);
+
+        adapter = new MoveAdapter(this, LutemonStorage.getInstance().getLutemons());
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
         textView=findViewById(R.id.resultsTxt);
-
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_fighting_arena);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
