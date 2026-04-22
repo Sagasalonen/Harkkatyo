@@ -6,20 +6,26 @@ public class Lutemon {
     public int defences;
     public int attacks;
     public int experiencePoints;
+    public int ogHealth;
     public int health;
     public String location;
 
-    public Lutemon(String name, String color, int defences, int attacks, int experiencePoints, int health) {
+    public Lutemon(String name, String color, int defences, int attacks, int experiencePoints, int ogHealth) {
         this.name = name;
         this.color = color;
         this.defences = defences;
         this.attacks = attacks;
         this.experiencePoints = experiencePoints;
-        this.health = health;
+        this.ogHealth = ogHealth;
         this.location= "home";
+        this.health = ogHealth;
     }
     public void attack(Lutemon target){
-        int damage = this.attacks+ target.defences;
+        int damage = this.attacks - target.defences;
         target.health= target.health-damage;
+    }
+
+    public void restoreHealth() {
+        this.health = ogHealth;
     }
 }
