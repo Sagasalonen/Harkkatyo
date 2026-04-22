@@ -22,7 +22,7 @@ public class ListLutemons extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_list_lutemons);
 
-        RecyclerView recyclerView = findViewById(R.id.ListLutemonsRv);
+        RecyclerView recyclerView = findViewById(R.id.FightingLutemonsRv);
 
         adapter = new LutemonListAdapter(this, LutemonStorage.getInstance().getLutemons());
 
