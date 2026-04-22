@@ -38,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#CE89B7"
+        android:onClick="moveLutemonFromHome"
         android:text="Siirrä lutemon" />
 
 </LinearLayout>
