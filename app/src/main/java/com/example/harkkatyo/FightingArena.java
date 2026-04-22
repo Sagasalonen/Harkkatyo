@@ -71,7 +71,7 @@ public class FightingArena extends AppCompatActivity {
                 break;}
 
         }
-        textView.append("Taistelu on ohi.\n");
+        textView.append("Taistelu on ohi.");
 
 
     }
