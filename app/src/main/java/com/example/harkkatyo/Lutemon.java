@@ -19,7 +19,7 @@ public class Lutemon {
         this.location= "home";
     }
     public void attack(Lutemon target){
-        int damage = this.attacks+ target.defences;
+        int damage = this.attacks-target.defences;
         target.health= target.health-damage;
     }
 }
