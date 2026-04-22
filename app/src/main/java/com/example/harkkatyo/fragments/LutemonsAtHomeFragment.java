@@ -72,7 +72,7 @@ public class LutemonsAtHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lutemons_at_home, container, false);
-        RecyclerView recyclerView = view.findViewById(R.id.LutemonsFightingRV);
+        RecyclerView recyclerView = view.findViewById(R.id.LutemonsHomeRV);
         // Inflate the layout for this fragment
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
