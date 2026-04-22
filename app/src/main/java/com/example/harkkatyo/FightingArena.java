@@ -49,8 +49,8 @@ public class FightingArena extends AppCompatActivity {
             if (B.health>0){
                 textView.append(B.name+" selvisi hyökkäyksestä hengissä.\n");
             }else{textView.append(B.name+" kuoli hyökkäyksessä\n");
-                LutemonStorage.getInstance().addDeadLutemon(A);
-                LutemonStorage.getInstance().deleteLutemon(A);
+                LutemonStorage.getInstance().addDeadLutemon(B);
+                LutemonStorage.getInstance().deleteLutemon(B);
                 break;}
 
             B.attack(A);
