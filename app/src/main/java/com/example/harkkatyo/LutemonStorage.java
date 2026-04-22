@@ -7,6 +7,8 @@ import java.util.ArrayList;
 public class LutemonStorage {
         private static LutemonStorage instance;
         private ArrayList<Lutemon> lutemons;
+
+        public ArrayList<Lutemon> deadLutemons;
         private LutemonStorage(){
             lutemons = new ArrayList<>();
         }
@@ -22,6 +24,16 @@ public class LutemonStorage {
         public void addLutemon(Lutemon lutemon) {
             lutemons.add(lutemon);
         }
+        public void deleteLutemon(Lutemon lutemon) {
+            lutemons.remove(lutemon);
+        }
+        public void addDeadLutemon(Lutemon lutemon) {
+            deadLutemons.add(lutemon);
+        }
+        public ArrayList<Lutemon> getDeadLutemons() {
+        return deadLutemons;
     }
+    }
+
 
 

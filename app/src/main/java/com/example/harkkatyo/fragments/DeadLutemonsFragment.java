@@ -72,14 +72,14 @@ public class DeadLutemonsFragment extends Fragment {
         // Inflate the layout for this fragment
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        ArrayList<Lutemon>deadLutemons = (LutemonStorage.getInstance().getLutemons());
+        ArrayList<Lutemon>deadLutemons = LutemonStorage.getInstance().getDeadLutemons();
 
         LutemonListAdapter adapter = new LutemonListAdapter(getContext(),deadLutemons);
         recyclerView.setAdapter(adapter);
         return view;
     }
 
-    public ArrayList<Lutemon> ListLutemonsWhoAreDead(ArrayList<Lutemon> lutemons) {
+    /*public ArrayList<Lutemon> ListLutemonsWhoAreDead(ArrayList<Lutemon> lutemons) {
         ArrayList<Lutemon> lutemonsWhoAreDead = new ArrayList<>();
         for (int i = 0; i < lutemons.size(); i++) {
             Lutemon lutemon = lutemons.get(i);
@@ -88,5 +88,5 @@ public class DeadLutemonsFragment extends Fragment {
             }
         }
         return lutemonsWhoAreDead;
-    }
+    }*/
 }
