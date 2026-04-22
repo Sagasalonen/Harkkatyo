@@ -52,6 +52,7 @@ public class FightingArena extends AppCompatActivity {
                 LutemonStorage.getInstance().addDeadLutemon(B);
                 LutemonStorage.getInstance().deleteLutemon(B);
                 A.restoreHealth();
+                A.experiencePoints++;
                 break;}
 
             B.attack(A);
@@ -62,6 +63,7 @@ public class FightingArena extends AppCompatActivity {
                 LutemonStorage.getInstance().addDeadLutemon(A);
                 LutemonStorage.getInstance().deleteLutemon(A);
                 B.restoreHealth();
+                B.experiencePoints++;
                 break;}
 
         }
