@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import com.example.harkkatyo.Lutemon;
 import com.example.harkkatyo.LutemonListAdapter;
 import com.example.harkkatyo.LutemonStorage;
-import com.example.harkkatyo.MoveAdapter;
 import com.example.harkkatyo.R;
 
 import java.util.ArrayList;

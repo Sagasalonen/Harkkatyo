@@ -31,11 +31,6 @@
             android:layout_height="wrap_content"
             android:text="Treenaamaan" />
 
-        <RadioButton
-            android:id="@+id/ToFight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Taistelemaan" />
     </RadioGroup>
 
     <Button

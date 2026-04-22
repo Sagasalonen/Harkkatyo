@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RadioGroup;
 
 import com.example.harkkatyo.Lutemon;
 import com.example.harkkatyo.LutemonStorage;
@@ -32,6 +34,8 @@ public class LutemonsFightingFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private MoveAdapter adapter;
 
     public LutemonsFightingFragment() {
         // Required empty public constructor
@@ -67,15 +71,38 @@ public class LutemonsFightingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_lutemons_fighting, container, false);
+        View view = inflater.inflate(R.layout.fragment_lutemons_at_home, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.LutemonsFightingRV);
         // Inflate the layout for this fragment
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        ArrayList<Lutemon>fightingLutemons = ListLutemonsFighting(LutemonStorage.getInstance().getLutemons());
+        ArrayList<Lutemon> fightingLutemons = ListLutemonsFighting(LutemonStorage.getInstance().getLutemons());
 
-        MoveAdapter adapter = new MoveAdapter(getContext(),fightingLutemons);
+        adapter = new MoveAdapter(getContext(), fightingLutemons);
         recyclerView.setAdapter(adapter);
+
+        Button button = view.findViewById(R.id.MoveLutemon);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View view) {
+
+                RadioGroup rgLutemonMove = getView().findViewById(R.id.ToFight);
+                ArrayList<Lutemon> selectedLutemons = adapter.getSelectedLutemons();
+
+                int choice = rgLutemonMove.getCheckedRadioButtonId();
+
+                for (int i = 0; i < selectedLutemons.size(); i++) {
+                    Lutemon lutemon = selectedLutemons.get(i);
+                    if (choice == R.id.ToHome) {
+                        lutemon.location = "home";
+                    } else if (choice == R.id.ToTrain) {
+                        lutemon.location = "treenikentta";
+                    }
+                }
+                adapter.notifyDataSetChanged();
+            }
+        });
         return view;
     }
 

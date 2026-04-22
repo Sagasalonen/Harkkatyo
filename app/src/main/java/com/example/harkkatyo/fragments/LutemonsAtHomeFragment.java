@@ -15,7 +15,6 @@ import android.widget.RadioGroup;
 import com.example.harkkatyo.Lutemon;
 import com.example.harkkatyo.LutemonStorage;
 import com.example.harkkatyo.MoveAdapter;
-import com.example.harkkatyo.MoveLutemons;
 import com.example.harkkatyo.R;
 
 import java.util.ArrayList;
