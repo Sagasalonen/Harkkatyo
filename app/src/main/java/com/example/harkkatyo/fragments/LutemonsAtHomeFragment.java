@@ -118,22 +118,4 @@ public class LutemonsAtHomeFragment extends Fragment {
         }
         return lutemonsAtHome;
     }
-
-    /*public void moveLutemonFromHome(View view) {
-
-        RadioGroup rgLutemonMove = view.findViewById(R.id.moveFromHome);
-        ArrayList<Lutemon> selectedLutemons = adapter.getSelectedLutemons();
-
-        int choice = rgLutemonMove.getCheckedRadioButtonId();
-
-        for (int i = 0; i < selectedLutemons.size(); i++) {
-            Lutemon lutemon = selectedLutemons.get(i);
-            if (choice == R.id.ToTrain) {
-                lutemon.location = "treenikentta";
-            } else if (choice == R.id.ToFight) {
-                lutemon.location = "taistelukentta";
-            }
-        }
-        adapter.notifyDataSetChanged();
-    }*/
 }
