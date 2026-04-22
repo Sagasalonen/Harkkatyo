@@ -102,8 +102,6 @@ public class LutemonsAtHomeFragment extends Fragment {
             }
             adapter.notifyDataSetChanged();
         }});
-
-
         return view;
     }
 

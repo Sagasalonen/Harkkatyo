@@ -16,6 +16,7 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <RadioGroup
+        android:id="@+id/moveFromTraining"
         android:layout_width="332dp"
         android:layout_height="164dp">
 
@@ -24,12 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Kotiin" />
-
-        <RadioButton
-            android:id="@+id/ToTrain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Treenaamaan" />
 
         <RadioButton
             android:id="@+id/ToFight"
