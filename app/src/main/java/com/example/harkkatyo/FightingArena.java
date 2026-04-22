@@ -42,21 +42,21 @@ public class FightingArena extends AppCompatActivity {
 
     public void LutemonFight(Lutemon A, Lutemon B){
         while(true){
-            textView.setText("1: "+A.color+"("+A.name+") att: "+A.attacks+"; def: "+A.defences+"; exp: "+A.experiencePoints+"; health: "+A.health);
-            textView.append("1: "+B.color+"("+B.name+") att: "+B.attacks+"; def: "+B.defences+"; exp: "+B.experiencePoints+"; health: "+B.health);
+            textView.setText("1: "+A.color+"("+A.name+") att: "+A.attacks+"; def: "+A.defences+"; exp: "+A.experiencePoints+"; health: "+A.health+"\n");
+            textView.append("1: "+B.color+"("+B.name+") att: "+B.attacks+"; def: "+B.defences+"; exp: "+B.experiencePoints+"; health: "+B.health+"\n");
             A.attack(B);
-            textView.append(A.name+" hyökkää lutemoniin "+B.name+".");
+            textView.append(A.name+" hyökkää lutemoniin "+B.name+".\n");
             if (B.health>0){
-                textView.append(B.name+" selvisi hyökkäyksestä hengissä.");
-            }else{textView.append(B.name+" kuoli hyökkäyksessä");
+                textView.append(B.name+" selvisi hyökkäyksestä hengissä.\n");
+            }else{textView.append(B.name+" kuoli hyökkäyksessä\n");
                 B.location="dead";
                 break;}
 
             B.attack(A);
-            textView.append(B.name+" hyökkää lutemoniin "+A.name+".");
+            textView.append(B.name+" hyökkää lutemoniin "+A.name+".\n");
             if (A.health>0){
-                textView.append(A.name+" selvisi hyökkäyksestä hengissä.");
-            }else{textView.append(A.name+" kuoli hyökkäyksessä");
+                textView.append(A.name+" selvisi hyökkäyksestä hengissä.\n");
+            }else{textView.append(A.name+" kuoli hyökkäyksessä\n");
                 A.location="dead";
                 break;}
 
