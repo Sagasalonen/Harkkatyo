@@ -4,7 +4,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".TrainingArena">
 
     <Button
         android:id="@+id/getBackToMainActivityButton"
@@ -30,10 +30,11 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <Button
-        android:id="@+id/Fight"
+        android:id="@+id/Train"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#CE89B7"
+        android:onClick="TrainLutemons"
         android:text="Treenaamaan!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,21 +45,23 @@
         android:id="@+id/trainTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="treenin tulokset"
+        android:layout_marginBottom="176dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Fight" />
+        app:layout_constraintTop_toBottomOf="@+id/Train" />
 
     <TextView
         android:id="@+id/ChooseLutemonsTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Valitse treenattavat lutemonit:"
-        app:layout_constraintBottom_toTopOf="@+id/Fight"
+        app:layout_constraintBottom_toTopOf="@+id/Train"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/getBackToMainActivityButton"
         app:layout_constraintVertical_bias="0.031" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
