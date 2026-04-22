@@ -48,6 +48,8 @@ public class FightingArena extends AppCompatActivity {
             textView.append(A.name+" hyökkää lutemoniin "+B.name+".\n");
             if (B.health>0){
                 textView.append(B.name+" selvisi hyökkäyksestä hengissä.\n");
+                textView.setText("1: "+A.color+"("+A.name+") att: "+A.attacks+"; def: "+A.defences+"; exp: "+A.experiencePoints+"; health: "+A.health+"\n");
+                textView.append("2: "+B.color+"("+B.name+") att: "+B.attacks+"; def: "+B.defences+"; exp: "+B.experiencePoints+"; health: "+B.health+"\n");
             }else{textView.append(B.name+" kuoli hyökkäyksessä\n");
                 LutemonStorage.getInstance().addDeadLutemon(B);
                 LutemonStorage.getInstance().deleteLutemon(B);
@@ -59,6 +61,8 @@ public class FightingArena extends AppCompatActivity {
             textView.append(B.name+" hyökkää lutemoniin "+A.name+".\n");
             if (A.health>0){
                 textView.append(A.name+" selvisi hyökkäyksestä hengissä.\n");
+                textView.append("1: "+A.color+"("+A.name+") att: "+A.attacks+"; def: "+A.defences+"; exp: "+A.experiencePoints+"; health: "+A.health+"\n");
+                textView.append("2: "+B.color+"("+B.name+") att: "+B.attacks+"; def: "+B.defences+"; exp: "+B.experiencePoints+"; health: "+B.health+"\n");
             }else{textView.append(A.name+" kuoli hyökkäyksessä\n");
                 LutemonStorage.getInstance().addDeadLutemon(A);
                 LutemonStorage.getInstance().deleteLutemon(A);
