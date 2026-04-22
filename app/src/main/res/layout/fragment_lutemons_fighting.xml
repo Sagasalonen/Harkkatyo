@@ -16,6 +16,7 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <RadioGroup
+        android:id="@+id/fromFighting"
         android:layout_width="332dp"
         android:layout_height="164dp">
 

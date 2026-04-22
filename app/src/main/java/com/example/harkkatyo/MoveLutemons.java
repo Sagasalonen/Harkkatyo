@@ -45,6 +45,8 @@ public class MoveLutemons extends AppCompatActivity {
     }
 
         private View.OnClickListener listener = new View.OnClickListener() {
+
+
             @Override
             public void onClick(View view) {
                 Fragment fragment;

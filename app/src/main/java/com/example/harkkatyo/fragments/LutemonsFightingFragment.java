@@ -87,7 +87,7 @@ public class LutemonsFightingFragment extends Fragment {
 
             public void onClick(View view) {
 
-                RadioGroup rgLutemonMove = getView().findViewById(R.id.ToFight);
+                RadioGroup rgLutemonMove = getView().findViewById(R.id.fromFighting);
                 ArrayList<Lutemon> selectedLutemons = adapter.getSelectedLutemons();
 
                 int choice = rgLutemonMove.getCheckedRadioButtonId();
