@@ -18,5 +18,8 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
         lutemonDefences = itemView.findViewById(R.id.txtLutemonDefences);
         lutemonLives = itemView.findViewById(R.id.txtLutemonLives);
         lutemonExperiencePoints = itemView.findViewById(R.id.txtLutemonExperiencePoints);
+        imageView=itemView.findViewById(R.id.ivLutemonImage);
+
+
     }
 }
