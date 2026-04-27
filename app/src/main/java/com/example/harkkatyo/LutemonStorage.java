@@ -8,7 +8,7 @@ public class LutemonStorage {
         private static LutemonStorage instance;
         private ArrayList<Lutemon> lutemons;
 
-        public ArrayList<Lutemon> deadLutemons;
+        private ArrayList<Lutemon> deadLutemons;
         private LutemonStorage(){
             lutemons = new ArrayList<>();
             deadLutemons = new ArrayList<>();
